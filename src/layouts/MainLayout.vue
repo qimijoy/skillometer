@@ -1,13 +1,13 @@
 <template>
 	<div class="skillometer">
-		<header>Хедер</header>
+		<SKillHeader />
 
 		<div class="skillometer__loader" v-if="isQuestionsLoading">
 			<!-- лоадер -->
 		</div>
 
 		<div v-else class="skillometer__content">
-			<!--	Сайдбар -->
+			<SkillSidebar class="skillometer__sidebar" v-if="isSidebarOpen" />
 
 			<RouterView class="skillometer__view" :class="{ skillometer__view_expanded: !isSidebarOpen }" />
 		</div>
@@ -17,6 +17,9 @@
 <script setup>
 import { computed } from 'vue';
 import { useMainStore } from '@/stores/MainStore';
+
+import SKillHeader from '@/components/SKillHeader.vue';
+import SkillSidebar from '@/components/SkillSidebar.vue';
 
 const mainStore = useMainStore();
 

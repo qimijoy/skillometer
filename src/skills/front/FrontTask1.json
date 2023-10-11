@@ -2,6 +2,7 @@
   "id": 1,
   "title": "Пример таски 1",
   "difficulty": "easy",
+  "tags": ["front", "js", "Async js"],
   "question": "Каким будет вывод этого фрагмента кода?",
   "images": [
     "FrontTask1_1.png"
@@ -23,5 +24,6 @@
       "answer_id": 4,
       "text": "Пример ответа 4"
     }
-  ]
+  ],
+  "explanation": "Ответ и пояснение"
 }

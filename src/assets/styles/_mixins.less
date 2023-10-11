@@ -1,0 +1,16 @@
+.nav-link(@color, @color-hover, @color-active) {
+	padding: 10px;
+	font-weight: bold;
+	text-decoration: none;
+	color: @color;
+	outline: none;
+
+	&:hover,
+	&:focus:not(&_active) {
+		color: @color-hover;
+	}
+
+	&:active {
+		color: @color-active;
+	}
+}
