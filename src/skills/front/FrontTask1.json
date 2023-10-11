@@ -1,0 +1,27 @@
+{
+  "id": 1,
+  "title": "Пример таски 1",
+  "difficulty": "easy",
+  "question": "Каким будет вывод этого фрагмента кода?",
+  "images": [
+    "FrontTask1_1.png"
+  ],
+  "answers": [
+    {
+      "answer_id": 1,
+      "text": "Пример ответа 1"
+    },
+    {
+      "answer_id": 2,
+      "text": "Пример ответа 2"
+    },
+    {
+      "answer_id": 3,
+      "text": "Пример ответа 3"
+    },
+    {
+      "answer_id": 4,
+      "text": "Пример ответа 4"
+    }
+  ]
+}

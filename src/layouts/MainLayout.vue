@@ -1,8 +1,30 @@
 <template>
-	<div class="skillometer">123</div>
+	<div class="skillometer">
+		<header>Хедер</header>
+
+		<div class="skillometer__loader" v-if="isQuestionsLoading">
+			<!-- лоадер -->
+		</div>
+
+		<div v-else class="skillometer__content">
+			<!--	Сайдбар -->
+
+			<RouterView class="skillometer__view" :class="{ skillometer__view_expanded: !isSidebarOpen }" />
+		</div>
+	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import { computed } from 'vue';
+import { useMainStore } from '@/stores/MainStore';
+
+const mainStore = useMainStore();
+
+const isQuestionsLoading = false; // пока так, а далее берем из Store
+
+// COMPUTED
+const isSidebarOpen = computed(() => mainStore.isSidebarOpen);
+</script>
 
 <style lang="less" scoped>
 @import '@/assets/styles/_breakpoints';
@@ -24,6 +46,26 @@
 	}
 	@media @large {
 		padding: 0 25px;
+	}
+
+	&__loader {
+		flex-grow: 1;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: row;
+
+		flex-grow: 1;
+	}
+
+	&__view {
+		padding: 20px 30px;
+		width: 100%;
 	}
 }
 </style>

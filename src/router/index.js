@@ -18,6 +18,12 @@ const router = createRouter({
 			component: HomeView,
 			meta: { layout: 'MainLayout', needAuth: true },
 		},
+		{
+			path: '/skillometer/:skill?/:difficulty?',
+			name: 'Skillometer',
+			component: () => import('../views/SkillometerView.vue'),
+			meta: { layout: 'MainLayout', needAuth: true },
+		},
 	],
 });
 
