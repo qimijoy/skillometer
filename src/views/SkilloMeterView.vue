@@ -1,10 +1,16 @@
 <template>
 	<div>
 		<h1>Тест</h1>
-		<p>{{ frontTasks }}</p>
+		<p>{{ allTasks }}</p>
 	</div>
 </template>
 
 <script setup>
-import frontTasks from '@/skills/';
+import { computed } from 'vue';
+
+import { useSkillStore } from '@/stores/SkillStore';
+const SkillStore = useSkillStore();
+
+const allTasks = computed(() => SkillStore.allSkills);
+const tags = computed(() => SkillStore.tags);
 </script>

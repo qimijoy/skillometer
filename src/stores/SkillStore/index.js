@@ -1,25 +1,44 @@
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
+
+import skills from '@/skills/';
 
 export const useSkillStore = defineStore('skillStore', () => {
 	// STATES
-	const skills = ref([]);
+	const allSkills = ref(skills);
 
-	// ACTIONS
-	const addSkill = (skillName) => {
-		skills.value.push(skillName);
-	};
-
-	const removeSkill = (skillName) => {
-		const index = skills.value.indexOf(skillName);
-		if (index !== -1) {
-			skills.value.splice(index, 1);
+	// COMPUTED
+	const allTasks = computed(() => {
+		if (!allSkills.value) {
+			return [];
 		}
-	};
+
+		const result = [];
+
+		for (const skill in allSkills.value) {
+			if (Object.hasOwn(allSkills.value, skill)) {
+				for (const task in allSkills.value[skill]) {
+					if (Object.hasOwn(allSkills.value[skill], task)) {
+						result.push(allSkills.value[skill][task]);
+					}
+				}
+			}
+		}
+
+		return result;
+	});
+
+	const allTags = computed(() => {
+		const tags = allTasks.value.reduce((acc, task) => {
+			return [...acc, ...task.tags];
+		}, []);
+
+		return Array.from(new Set(tags));
+	});
 
 	return {
-		skills,
-		addSkill,
-		removeSkill,
+		allSkills,
+		allTasks,
+		allTags,
 	};
 });

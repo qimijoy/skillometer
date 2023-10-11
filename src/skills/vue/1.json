@@ -1,0 +1,29 @@
+{
+  "id": 3,
+  "title": "Пример таски 3",
+  "difficulty": "easy",
+  "tags": ["front", "js", "vue"],
+  "question": "Какая-то задача на vue?",
+  "images": [
+    "Task1_1.png"
+  ],
+  "answers": [
+    {
+      "answer_id": 1,
+      "text": "Пример ответа 1"
+    },
+    {
+      "answer_id": 2,
+      "text": "Пример ответа 2"
+    },
+    {
+      "answer_id": 3,
+      "text": "Пример ответа 3"
+    },
+    {
+      "answer_id": 4,
+      "text": "Пример ответа 4"
+    }
+  ],
+  "explanation": "Ответ и пояснение"
+}

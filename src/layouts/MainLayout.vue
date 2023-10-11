@@ -2,14 +2,10 @@
 	<div class="skillometer">
 		<SKillHeader />
 
-		<div class="skillometer__loader" v-if="isQuestionsLoading">
-			<!-- лоадер -->
-		</div>
-
-		<div v-else class="skillometer__content">
+		<div class="skillometer__content">
 			<SkillSidebar class="skillometer__sidebar" v-if="isSidebarOpen" />
 
-			<RouterView class="skillometer__view" :class="{ skillometer__view_expanded: !isSidebarOpen }" />
+			<RouterView class="skillometer__view" />
 		</div>
 	</div>
 </template>
@@ -23,14 +19,13 @@ import SkillSidebar from '@/components/SkillSidebar.vue';
 
 const mainStore = useMainStore();
 
-const isQuestionsLoading = false; // пока так, а далее берем из Store
-
 // COMPUTED
 const isSidebarOpen = computed(() => mainStore.isSidebarOpen);
 </script>
 
 <style lang="less" scoped>
 @import '@/assets/styles/_breakpoints';
+@import '@/assets/styles/_sizes';
 
 .skillometer {
 	display: flex;
@@ -51,19 +46,16 @@ const isSidebarOpen = computed(() => mainStore.isSidebarOpen);
 		padding: 0 25px;
 	}
 
-	&__loader {
-		flex-grow: 1;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
 	&__content {
 		display: flex;
 		flex-direction: row;
 
 		flex-grow: 1;
+	}
+
+	&__sidebar {
+		width: @sidebar-width;
+		min-width: @sidebar-width;
 	}
 
 	&__view {

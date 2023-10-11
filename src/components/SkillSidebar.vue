@@ -36,8 +36,6 @@ const links = computed(() => [{ name: 'Тест', href: '/auth' }]);
 	display: flex;
 	flex-direction: row;
 
-	width: @sidebar-width;
-
 	background-color: @white;
 	margin-right: 20px;
 	transition: 0.2s;
