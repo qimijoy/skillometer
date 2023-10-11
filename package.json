@@ -1,0 +1,35 @@
+{
+  "name": "skillometer",
+  "private": "true",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ./"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/eslint-parser": "^7.22.15",
+    "@babel/preset-env": "^7.22.20",
+    "@eslint/js": "^8.51.0",
+    "@qimijoy/browserslist-config": "^1.0.7",
+    "@qimijoy/eslint-config": "^1.1.1",
+    "@qimijoy/prettier-config": "^1.0.1",
+    "@vitejs/plugin-vue": "^4.4.0",
+    "core-js": "^3.33.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-vue": "^9.17.0",
+    "globals": "^13.23.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "vite": "^4.4.11",
+    "vue-eslint-parser": "^9.3.2"
+  },
+  "dependencies": {
+    "pinia": "^2.1.6",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  }
+}
