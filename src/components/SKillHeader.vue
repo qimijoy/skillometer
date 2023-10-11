@@ -29,7 +29,8 @@ const route = useRoute();
 // Computed
 const links = computed(() => [
 	{ name: 'Домой', href: '/' },
-	{ name: 'Вопросы', href: '/skillometer' },
+	{ name: 'Список задач', href: '/tasks' },
+	{ name: 'Начать', href: '/skillometer' },
 ]);
 
 const setSidebarState = (value) => {

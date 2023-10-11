@@ -19,7 +19,13 @@ const router = createRouter({
 			meta: { layout: 'MainLayout', needAuth: true },
 		},
 		{
-			path: '/skillometer/:skill?/:difficulty?',
+			path: '/tasks',
+			name: 'Tasks',
+			component: () => import('../views/TasksView.vue'),
+			meta: { layout: 'MainLayout', needAuth: true },
+		},
+		{
+			path: '/skillometer',
 			name: 'Skillometer',
 			component: () => import('../views/SkillometerView.vue'),
 			meta: { layout: 'MainLayout', needAuth: true },
@@ -32,7 +38,7 @@ router.beforeEach((to, from, next) => {
 
 	const isAuthorized = authStore.isAuthorized;
 
-	// Does route need auth?
+	// Does the route need authorization
 	const needAuth = to.matched.some((record) => record.meta.needAuth);
 
 	if (needAuth && !isAuthorized) {
