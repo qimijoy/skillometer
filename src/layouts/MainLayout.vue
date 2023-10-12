@@ -14,8 +14,8 @@
 import { computed } from 'vue';
 import { useMainStore } from '@/stores/MainStore';
 
-import SKillHeader from '@/components/SKillHeader.vue';
-import SkillSidebar from '@/components/SkillSidebar.vue';
+import SKillHeader from '@/components/TheHeader.vue';
+import SkillSidebar from '@/components/TheSidebar.vue';
 
 const mainStore = useMainStore();
 
@@ -32,19 +32,7 @@ const isSidebarOpen = computed(() => mainStore.isSidebarOpen);
 	flex-direction: column;
 	max-width: 1024px;
 	margin: 0 auto;
-	padding: 0 10px;
 	height: 100%;
-
-	@media @small {
-		padding: 0 15px;
-	}
-
-	@media @medium {
-		padding: 0 20px;
-	}
-	@media @large {
-		padding: 0 25px;
-	}
 
 	&__content {
 		display: flex;
@@ -59,8 +47,16 @@ const isSidebarOpen = computed(() => mainStore.isSidebarOpen);
 	}
 
 	&__view {
-		padding: 20px 30px;
 		width: 100%;
+
+		padding: 20px 15px 0;
+
+		@media @medium {
+			padding: 20px 20px 0;
+		}
+		@media @large {
+			padding: 20px 25px 0;
+		}
 	}
 }
 </style>

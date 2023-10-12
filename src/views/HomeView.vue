@@ -12,7 +12,13 @@
 					ответа, и получить объяснение, почему так, а не иначе.
 				</p>
 			</div>
-			<div class="content__stats">Всего задач: {{ tasksCount }}</div>
+			<div class="content__stats">
+				<p class="text text_black text_justify">Всего задач: {{ tasksCount }}</p>
+				<p class="text text_black text_justify">Темы:</p>
+				<div class="content__stats-badges badges">
+					<SkillBadge class="badges__item" v-for="tag of allTags" :key="tag" :label="tag" />
+				</div>
+			</div>
 		</div>
 	</main>
 </template>
@@ -21,10 +27,13 @@
 import { computed } from 'vue';
 import { useSkillStore } from '@/stores/SkillStore';
 
+import SkillBadge from '@/components/SkillBadge.vue';
+
 const SkillStore = useSkillStore();
 
 // COMPUTED
 const tasksCount = computed(() => SkillStore.allTasks.length);
+const allTags = computed(() => SkillStore.allTags);
 </script>
 
 <style lang="less" scoped>
@@ -37,6 +46,19 @@ const tasksCount = computed(() => SkillStore.allTasks.length);
 
 	@media @medium {
 		grid-template-columns: 1.5fr 0.8fr;
+	}
+
+	&__stats-badges {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+.badges {
+	&__item {
+		margin-right: 5px;
+		margin-top: 5px;
 	}
 }
 </style>
