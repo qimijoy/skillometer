@@ -1,6 +1,6 @@
 <template>
 	<header class="header">
-		<SkillBurger class="header__burger" color="primary" @change="(state) => setSidebarState(state)" :disabled="false" />
+		<SkillBurger class="header__burger" color="primary" :disabled="false" @change="(state) => setSidebarState(state)" />
 		<nav class="header__nav">
 			<SkillRouterLink
 				v-for="link of links"

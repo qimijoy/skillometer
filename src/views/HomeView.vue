@@ -16,7 +16,7 @@
 				<p class="text text_black text_justify">Всего задач: {{ tasksCount }}</p>
 				<p class="text text_black text_justify">Темы:</p>
 				<div class="content__stats-badges badges">
-					<SkillBadge class="badges__item" v-for="tag of allTags" :key="tag" :label="tag" />
+					<SkillBadge v-for="tag of allTags" :key="tag" class="badges__item" :label="tag" />
 				</div>
 			</div>
 		</div>

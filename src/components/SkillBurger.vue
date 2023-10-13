@@ -1,13 +1,13 @@
 <template>
-	<div :class="classes" @click="toggleBurger()" @keydown.enter="toggleBurger()" tabindex="0" ref="burger">
-		<span :class="barClasses(1)"></span>
-		<span :class="barClasses(2)"></span>
-		<span :class="barClasses(3)"></span>
+	<div ref="burger" :class="classes" tabindex="0" @click="toggleBurger()" @keydown.enter="toggleBurger()">
+		<span :class="barClasses(1)" />
+		<span :class="barClasses(2)" />
+		<span :class="barClasses(3)" />
 	</div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, toRef } from 'vue';
 
 // PROPS
 const props = defineProps({
@@ -22,13 +22,13 @@ const props = defineProps({
 });
 
 // EMITS
-const emits = defineEmits({
+const emit = defineEmits({
 	change: (value) => typeof value === 'boolean',
 });
 
 // STATES
 const burger = ref(null);
-const isBurgerOpen = ref(props.state);
+const { state: isBurgerOpen } = toRef(props);
 
 // COMPUTED
 const classes = computed(() => {
@@ -47,7 +47,7 @@ const barClasses = (index) => [
 const toggleBurger = () => {
 	if (!burger.value.classList.contains('burger_disabled')) {
 		isBurgerOpen.value = !isBurgerOpen.value;
-		emits('change', isBurgerOpen.value);
+		emit('change', isBurgerOpen.value);
 	}
 };
 </script>

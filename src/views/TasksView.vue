@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>Список задач</h1>
-		<div class="task" v-for="task of allTasks" :key="task.id">
+		<div v-for="task of allTasks" :key="task.id" class="task">
 			<p class="task__question text text_black">{{ task }}</p>
 		</div>
 	</div>

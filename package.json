@@ -8,12 +8,11 @@
     "lint": "eslint ./"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.0",
+    "@babel/core": "^7.23.2",
     "@babel/eslint-parser": "^7.22.15",
-    "@babel/preset-env": "^7.22.20",
-    "@eslint/js": "^8.51.0",
+    "@babel/preset-env": "^7.23.2",
     "@qimijoy/browserslist-config": "^1.0.7",
-    "@qimijoy/eslint-config": "^1.1.1",
+    "@qimijoy/eslint-config": "^1.2.3",
     "@qimijoy/prettier-config": "^1.0.1",
     "@vitejs/plugin-vue": "^4.4.0",
     "core-js": "^3.33.0",
@@ -29,7 +28,7 @@
     "vue-eslint-parser": "^9.3.2"
   },
   "dependencies": {
-    "pinia": "^2.1.6",
+    "pinia": "^2.1.7",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   }

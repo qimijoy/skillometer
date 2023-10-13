@@ -3,7 +3,7 @@
 		<SKillHeader />
 
 		<div class="skillometer__content">
-			<SkillSidebar class="skillometer__sidebar" v-if="isSidebarOpen" />
+			<SkillSidebar v-if="isSidebarOpen" class="skillometer__sidebar" />
 
 			<RouterView class="skillometer__view" />
 		</div>
