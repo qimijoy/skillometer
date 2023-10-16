@@ -1,6 +1,5 @@
 <template>
 	<header class="header">
-		<SkillBurger class="header__burger" color="primary" :disabled="false" @change="(state) => setSidebarState(state)" />
 		<nav class="header__nav">
 			<SkillRouterLink
 				v-for="link of links"
@@ -20,7 +19,6 @@ import { useRoute } from 'vue-router';
 
 import { useMainStore } from '@/stores/MainStore';
 
-import SkillBurger from '@/components/SkillBurger.vue';
 import SkillRouterLink from '@/components/SkillRouterLink.vue';
 
 const mainStore = useMainStore();
@@ -32,10 +30,6 @@ const links = computed(() => [
 	{ name: 'Список задач', href: '/tasks' },
 	{ name: 'Начать', href: '/skillometer' },
 ]);
-
-const setSidebarState = (value) => {
-	mainStore.setSidebarState(value);
-};
 </script>
 
 <style lang="less" scoped>
@@ -55,18 +49,10 @@ const setSidebarState = (value) => {
 	padding: 0 20px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
 
-	&__burger {
-		margin-right: 40px;
-	}
-
 	&__nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
-
-	&__lang-switcher {
-		margin-left: auto;
 	}
 }
 </style>

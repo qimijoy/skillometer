@@ -3,24 +3,17 @@
 		<SKillHeader />
 
 		<div class="skillometer__content">
-			<SkillSidebar v-if="isSidebarOpen" class="skillometer__sidebar" />
-
 			<RouterView class="skillometer__view" />
 		</div>
 	</div>
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import { useMainStore } from '@/stores/MainStore';
 
 import SKillHeader from '@/components/TheHeader.vue';
-import SkillSidebar from '@/components/TheSidebar.vue';
 
 const mainStore = useMainStore();
-
-// COMPUTED
-const isSidebarOpen = computed(() => mainStore.isSidebarOpen);
 </script>
 
 <style lang="less" scoped>
@@ -39,11 +32,6 @@ const isSidebarOpen = computed(() => mainStore.isSidebarOpen);
 		flex-direction: row;
 
 		flex-grow: 1;
-	}
-
-	&__sidebar {
-		width: @sidebar-width;
-		min-width: @sidebar-width;
 	}
 
 	&__view {
