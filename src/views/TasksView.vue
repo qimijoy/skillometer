@@ -1,7 +1,7 @@
 <template>
 	<div class="tasks">
 		<h1 class="tasks__header heading">Список задач</h1>
-		<div v-for="task of allTasks" :key="task.id" class="task">
+		<div v-for="task in showedTasks" :key="task.id" class="task">
 			<div class="task__info">
 				<div class="task__supheading">
 					<div class="task__id">Задача №{{ task.id }}</div>
@@ -14,15 +14,21 @@
 			<p class="task__question text text_black">{{ task.question }}</p>
 			<p class="task__question text text_black">{{ task }}</p>
 		</div>
+		<div class="pagination">
+			<SkillPagination :items="allTasks" :pageSize="2" @changePage="onChangePageHandler" />
+		</div>
 	</div>
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 
 import { useSkillStore } from '@/stores/SkillStore';
 import SkillBadge from '@/components/SkillBadge.vue';
+import SkillPagination from '@/components/SkillPagination.vue';
 const SkillStore = useSkillStore();
+
+const showedTasks = ref([]);
 
 const allTasks = computed(() => SkillStore.allTasks);
 const tags = computed(() => SkillStore.allTags);
@@ -38,6 +44,10 @@ const getTaskDifficulty = (task) => {
 		case 'default':
 			return 'green';
 	}
+};
+
+const onChangePageHandler = (items) => {
+	showedTasks.value = items;
 };
 </script>
 
