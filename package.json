@@ -12,7 +12,7 @@
     "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.23.2",
     "@qimijoy/browserslist-config": "^1.0.7",
-    "@qimijoy/eslint-config": "^1.2.4",
+    "@qimijoy/eslint-config": "^1.2.5",
     "@qimijoy/prettier-config": "^1.0.1",
     "@vitejs/plugin-vue": "^4.4.0",
     "core-js": "^3.33.0",
