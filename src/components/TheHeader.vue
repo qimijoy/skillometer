@@ -28,7 +28,7 @@ const route = useRoute();
 const links = computed(() => [
 	{ name: 'Домой', href: '/' },
 	{ name: 'Список задач', href: '/tasks' },
-	{ name: 'Начать', href: '/skillometer' },
+	{ name: 'Скиллометр', href: '/skillometer' },
 ]);
 </script>
 

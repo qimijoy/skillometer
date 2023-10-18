@@ -1,7 +1,5 @@
 <template>
 	<div>
-		<h1>Скиллометр</h1>
-
 		<h2>Скиллы</h2>
 		<VSelect :options="allSkillsArray" multiple />
 
