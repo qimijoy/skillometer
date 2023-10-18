@@ -2,6 +2,7 @@
   "id": 2,
   "title": ".then()",
   "difficulty": "easy",
+  "skill": "js",
   "tags": ["front", "js", "Async js"],
   "question": "Каким будет вывод этого фрагмента кода?",
   "images": [

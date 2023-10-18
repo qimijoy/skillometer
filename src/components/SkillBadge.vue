@@ -19,5 +19,6 @@ const props = defineProps({
 	background-color: @primary;
 	border-radius: 10px;
 	color: @white;
+	line-height: 1em;
 }
 </style>

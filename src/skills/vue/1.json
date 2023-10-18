@@ -2,6 +2,7 @@
   "id": 3,
   "title": "Пример таски 3",
   "difficulty": "easy",
+  "skill": "vue",
   "tags": ["front", "js", "vue"],
   "question": "Какая-то задача на vue?",
   "images": [

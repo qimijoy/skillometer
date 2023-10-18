@@ -2,6 +2,7 @@
   "id": 1,
   "title": "Конструктор Promise",
   "difficulty": "easy",
+  "skill": "js",
   "tags": ["front", "js", "Async js"],
   "question": "Каким будет вывод этого фрагмента кода?",
   "images": [
