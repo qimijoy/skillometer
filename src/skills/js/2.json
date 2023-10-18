@@ -1,29 +1,33 @@
 {
   "id": 2,
-  "title": "Пример таски 2",
-  "difficulty": "medium",
+  "title": ".then()",
+  "difficulty": "easy",
   "tags": ["front", "js", "Async js"],
   "question": "Каким будет вывод этого фрагмента кода?",
   "images": [
-    "Task1_1.png"
+    "js/js2task_1.png"
   ],
   "answers": [
     {
       "answer_id": 1,
-      "text": "Пример ответа 1"
+      "text": "Start 1 End 2"
     },
     {
       "answer_id": 2,
-      "text": "Пример ответа 2"
+      "text": "Start End 1 2"
     },
     {
       "answer_id": 3,
-      "text": "Пример ответа 3"
+      "text": "Start 1 2 End"
     },
     {
       "answer_id": 4,
-      "text": "Пример ответа 4"
+      "text": "Start End 1"
     }
   ],
-  "explanation": "Ответ и пояснение"
+  "correctAnswerId": 1,
+  "explanation": "Интерпретатор JavaScript всегда сначала выполняет синхронный код, а затем асинхронный.",
+  "explanationImages": [
+    "js/images/js2exp_1.png"
+  ]
 }

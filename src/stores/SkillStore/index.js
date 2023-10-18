@@ -6,8 +6,11 @@ import skills from '@/skills/';
 export const useSkillStore = defineStore('skillStore', () => {
 	// STATES
 	const allSkills = ref(skills);
+	const difficulties = ref(['easy', 'medium', 'hard']);
 
 	// COMPUTED
+	const allSkillsArray = computed(() => Object.keys(allSkills.value));
+
 	const allTasks = computed(() => {
 		if (!allSkills.value) {
 			return [];
@@ -38,7 +41,9 @@ export const useSkillStore = defineStore('skillStore', () => {
 
 	return {
 		allSkills,
+		allSkillsArray,
 		allTasks,
 		allTags,
+		difficulties,
 	};
 });

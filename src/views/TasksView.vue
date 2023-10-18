@@ -12,7 +12,15 @@
 			</div>
 			<h2 class="heading">{{ task.title }}</h2>
 			<p class="task__question text text_black">{{ task.question }}</p>
-			<p class="task__question text text_black">{{ task }}</p>
+			<div class="task__images">
+				<img
+					v-for="(image, index) of task.images"
+					:key="image"
+					:src="`/images/${image}`"
+					:alt="`Image ${index}`"
+					class="task__image"
+				/>
+			</div>
 		</div>
 		<div class="pagination">
 			<SkillPagination :items="allTasks" :pageSize="2" @changePage="onChangePageHandler" />
@@ -49,14 +57,34 @@ const getTaskDifficulty = (task) => {
 const onChangePageHandler = (items) => {
 	showedTasks.value = items;
 };
+
+const zoomImage = (image) => {};
 </script>
 
 <style lang="less">
+@import '@/assets/styles/_breakpoints';
+
 .task {
 	background-color: #eeeeeeee;
 	border-radius: 5px;
 	padding: 15px;
 	margin-bottom: 20px;
+
+	&__images {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	&__image {
+		max-width: 100%;
+
+		@media @medium {
+			max-width: 50%;
+		}
+	}
 
 	&__info {
 		margin-bottom: 10px;
