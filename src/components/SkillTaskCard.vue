@@ -19,23 +19,46 @@
 				class="task__image"
 			/>
 		</div>
+		<div v-if="showAnswers" class="task__answers">
+			<SkillRadio
+				v-for="(answer, index) of task.answers"
+				:id="`answer-${index}-${answer.id}`"
+				:key="answer.id"
+				:name="`answer-${task.id}`"
+				:value="answer.id"
+				:label="answer.text"
+				:disabled="disableAnswers"
+				class="task__answer"
+				@update:checkedValue="selectAnswer(answer.id)"
+			/>
+		</div>
 	</div>
 </template>
 
 <script setup>
 import SkillBadge from '@/components/SkillBadge.vue';
+import SkillRadio from '@/components/controls/SkillRadio.vue';
 
 const props = defineProps({
 	task: {
 		type: Object,
 		required: true,
 	},
-	// showAnswers: {
-	// 	type: Boolean,
-	// 	default: false,
-	// },
+	showAnswers: {
+		type: Boolean,
+		default: false,
+	},
+	disableAnswers: {
+		type: Boolean,
+		default: false,
+	},
 });
 
+const emit = defineEmits({
+	'update:modelValue': (answerId) => typeof answerId === 'number',
+});
+
+// STATES
 const getTaskDifficulty = (task) => {
 	switch (task.difficulty) {
 		case 'easy':
@@ -48,6 +71,10 @@ const getTaskDifficulty = (task) => {
 			return 'green';
 	}
 };
+
+const selectAnswer = (answerId) => {
+	emit('update:modelValue', answerId);
+};
 </script>
 
 <style scoped lang="less">
@@ -58,22 +85,6 @@ const getTaskDifficulty = (task) => {
 	border-radius: 5px;
 	padding: 15px;
 	margin-bottom: 20px;
-
-	&__images {
-		display: flex;
-		flex-flow: row wrap;
-		align-items: center;
-		justify-content: center;
-		gap: 20px;
-	}
-
-	&__image {
-		max-width: 100%;
-
-		@media @medium {
-			max-width: 50%;
-		}
-	}
 
 	&__info {
 		margin-bottom: 10px;
@@ -108,6 +119,36 @@ const getTaskDifficulty = (task) => {
 
 		&_red {
 			background-color: red;
+		}
+	}
+
+	&__images {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		margin-bottom: 20px;
+	}
+
+	&__image {
+		max-width: 100%;
+
+		@media @medium {
+			max-width: 50%;
+		}
+	}
+
+	&__answers {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__answer {
+		margin-bottom: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 }

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="startSkillometer">
 		<template v-if="!tasksToShowLength">
 			<div class="skillometer__options">
 				<h2 class="heading">Скиллы</h2>
@@ -33,18 +33,21 @@
 		</template>
 
 		<template v-else>
-			<SkillChecker class="skillometer__tasks" :tasks="tasksToShow" />
+			<SkillChecker class="skillometer__tasks" :tasks="tasksToShow" @finish="finishHandler" />
 		</template>
 	</div>
+	<div v-else>Попробуйте ещё раз!</div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
+import { useSkillStore } from '@/stores/SkillStore';
 
+import SkillChecker from '@/components/SkillChecker.vue';
 import VSelect from 'vue-select';
 import 'vue-select/dist/vue-select.css';
-import { useSkillStore } from '@/stores/SkillStore';
-import SkillChecker from '@/components/SkillChecker.vue';
+
+import shuffle from '@/utils/shuffle';
 
 const SkillStore = useSkillStore();
 
@@ -54,6 +57,7 @@ const tags = ref([]);
 const difficulties = ref([]);
 const tasksCount = ref(null);
 const tasksToShow = ref([]);
+const startSkillometer = ref(true);
 
 // COMPUTED
 const allSkillsArray = computed(() => SkillStore.allSkillsArray);
@@ -67,13 +71,19 @@ const allValuesSettled = computed(
 const tasksToShowLength = computed(() => tasksToShow.value.length);
 
 const startHandler = () => {
-	tasksToShow.value = allTasks.value.filter((task) => {
-		const matchesSkills = skills.value.some((skill) => task.skill === skill);
-		const matchesDifficulty = difficulties.value.includes(task.difficulty);
-		const matchesTags = tags.value.some((tag) => task.tags.includes(tag));
+	tasksToShow.value = shuffle(
+		allTasks.value.filter((task) => {
+			const matchesSkills = skills.value.some((skill) => task.skill === skill);
+			const matchesDifficulty = difficulties.value.includes(task.difficulty);
+			const matchesTags = tags.value.some((tag) => task.tags.includes(tag));
 
-		return matchesSkills && matchesDifficulty && matchesTags;
-	});
+			return matchesSkills && matchesDifficulty && matchesTags;
+		}),
+	);
+};
+
+const finishHandler = () => {
+	startSkillometer.value = false;
 };
 </script>
 

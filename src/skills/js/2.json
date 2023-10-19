@@ -10,25 +10,25 @@
   ],
   "answers": [
     {
-      "answer_id": 1,
+      "id": 1,
       "text": "Start 1 End 2"
     },
     {
-      "answer_id": 2,
+      "id": 2,
       "text": "Start End 1 2"
     },
     {
-      "answer_id": 3,
+      "id": 3,
       "text": "Start 1 2 End"
     },
     {
-      "answer_id": 4,
+      "id": 4,
       "text": "Start End 1"
     }
   ],
   "correctAnswerId": 1,
   "explanation": "Интерпретатор JavaScript всегда сначала выполняет синхронный код, а затем асинхронный.",
   "explanationImages": [
-    "js/images/js2exp_1.png"
+    "js/js2exp_1.png"
   ]
 }
