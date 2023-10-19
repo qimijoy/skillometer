@@ -12,7 +12,7 @@
     "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.23.2",
     "@qimijoy/browserslist-config": "^1.0.7",
-    "@qimijoy/eslint-config": "^1.2.5",
+    "@qimijoy/eslint-config": "^1.3.1",
     "@qimijoy/prettier-config": "^1.0.1",
     "@vitejs/plugin-vue": "^4.4.0",
     "core-js": "^3.33.0",
@@ -22,9 +22,9 @@
     "globals": "^13.23.0",
     "husky": "^8.0.3",
     "less": "^4.2.0",
-    "lint-staged": "^15.0.1",
+    "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
-    "vite": "^4.4.11",
+    "vite": "^4.5.0",
     "vue-eslint-parser": "^9.3.2"
   },
   "dependencies": {
