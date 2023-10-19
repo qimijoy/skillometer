@@ -12,6 +12,8 @@
 			{{ buttonText }}
 		</button>
 
+		<div v-if="showExplanation" class="skill-checker__result">{{ resultText }}</div>
+
 		<div v-if="showExplanation" class="skill-checker__explanation">
 			<p class="text skill-checker__explanation-text">{{ currentTask.explanation }}</p>
 			<img
@@ -46,6 +48,10 @@ const showExplanation = ref(false);
 const isCorrectAnswer = ref(false);
 
 const currentTask = computed(() => props.tasks[currentTaskIndex.value]);
+const currentCorrectAnswerId = computed(() => currentTask.value.correctAnswerId);
+const currentCorrectAnswer = computed(() =>
+	currentTask.value.answers.find((answer) => answer.id === currentCorrectAnswerId.value),
+);
 const tasksCount = computed(() => props.tasks.length);
 const buttonText = computed(() => {
 	if (!showExplanation.value) {
@@ -59,25 +65,26 @@ const buttonText = computed(() => {
 	}
 });
 const correctAnswers = computed(() => props.tasks.map((task) => task.correctAnswerId));
-
-const setAnswer = (answerId) => {
-	console.log(answerId);
-};
+const resultText = computed(() =>
+	isCorrectAnswer.value ? 'ПРАВИЛЬНО!' : `НЕПРАВИЛЬНО! Правильный ответ: ${currentCorrectAnswer.value.text}`,
+);
 
 const checkAnswer = () => {
 	// Если кнопка нажата после получения объяснения
 	if (showExplanation.value) {
 		isCorrectAnswer.value = false;
 		showExplanation.value = false;
+		answer.value = null;
 
 		if (currentTaskIndex.value + 1 < tasksCount.value) {
 			currentTaskIndex.value++;
 		} else {
 			emit('finish');
 		}
+
 		// Если кнопка нажата после выбора ответа
 	} else {
-		if (correctAnswers.value[currentTaskIndex] === answer.value) {
+		if (currentCorrectAnswerId.value === answer.value) {
 			isCorrectAnswer.value = true;
 		} else {
 			isCorrectAnswer.value = false;
@@ -95,6 +102,10 @@ const checkAnswer = () => {
 
 	&__button {
 		padding: 10px 0;
+		margin-bottom: 20px;
+	}
+
+	&__result {
 		margin-bottom: 30px;
 	}
 

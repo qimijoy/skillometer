@@ -21,7 +21,7 @@
 		</div>
 		<div v-if="showAnswers" class="task__answers">
 			<SkillRadio
-				v-for="(answer, index) of task.answers"
+				v-for="(answer, index) of taskAnswers"
 				:id="`answer-${index}-${answer.id}`"
 				:key="answer.id"
 				:name="`answer-${task.id}`"
@@ -36,8 +36,10 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import SkillBadge from '@/components/SkillBadge.vue';
 import SkillRadio from '@/components/controls/SkillRadio.vue';
+import shuffle from '@/utils/shuffle';
 
 const props = defineProps({
 	task: {
@@ -71,6 +73,9 @@ const getTaskDifficulty = (task) => {
 			return 'green';
 	}
 };
+
+// COMPUTED
+const taskAnswers = computed(() => shuffle(props.task.answers));
 
 const selectAnswer = (answerId) => {
 	emit('update:modelValue', answerId);
