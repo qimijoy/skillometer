@@ -19,7 +19,7 @@
 			<img
 				v-for="(image, index) of currentTask.explanationImages"
 				:key="image"
-				:src="`/images/${image}`"
+				:src="`${image}`"
 				:alt="`Image ${index}`"
 				class="skill-checker__explanation-image"
 			/>
