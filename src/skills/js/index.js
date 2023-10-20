@@ -5,4 +5,11 @@ import task4 from './0004.json';
 import task5 from './0005.json';
 import task6 from './0006.json';
 
-export default { task1, task2, task3, task4, task5, task6 };
+const base = process.env.NODE_ENV === 'production' ? '/skillometer/' : '/';
+
+const tasks = [task1, task2, task3, task4, task5, task6];
+tasks.forEach((task) => {
+	task.images = task.images.map((image) => base + image);
+});
+
+export default { ...tasks };

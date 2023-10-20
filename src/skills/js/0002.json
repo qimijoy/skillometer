@@ -6,7 +6,7 @@
   "tags": ["front", "js", "Async js"],
   "question": "Каким будет вывод этого фрагмента кода?",
   "images": [
-    "/skillometer/images/js/js2task_1.png"
+    "images/js/js2task_1.png"
   ],
   "answers": [
     {
@@ -29,6 +29,6 @@
   "correctAnswerId": 1,
   "explanation": "Интерпретатор JavaScript всегда сначала выполняет синхронный код, а затем асинхронный.",
   "explanationImages": [
-    "/skillometer/images/js/js2exp_1.png"
+    "images/js/js2exp_1.png"
   ]
 }
