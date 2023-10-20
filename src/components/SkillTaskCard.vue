@@ -14,7 +14,7 @@
 			<img
 				v-for="(image, index) of task.images"
 				:key="image"
-				:src="`/images/${image}`"
+				:src="`${image}`"
 				:alt="`Image ${index}`"
 				class="task__image"
 			/>
