@@ -15,7 +15,7 @@
 		<div v-if="showExplanation" class="skill-checker__result">{{ resultText }}</div>
 
 		<div v-if="showExplanation" class="skill-checker__explanation">
-			<p class="text skill-checker__explanation-text">{{ currentTask.explanation }}</p>
+			<p class="skill-checker__explanation-text">{{ currentTask.explanation }}</p>
 			<img
 				v-for="(image, index) of currentTask.explanationImages"
 				:key="image"
@@ -113,7 +113,10 @@ const checkAnswer = () => {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 0 30px;
+	}
+
+	&__explanation-text {
+		margin-bottom: 15px;
 	}
 
 	&__explanation-image {

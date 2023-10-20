@@ -1,6 +1,6 @@
 {
   "id": 2,
-  "title": ".then()",
+  "title": "Promise",
   "difficulty": "easy",
   "skill": "js",
   "tags": ["front", "js", "Async js"],
@@ -11,19 +11,19 @@
   "answers": [
     {
       "id": 1,
-      "text": "Start 1 End 2"
+      "text": "start 1 end 2"
     },
     {
       "id": 2,
-      "text": "Start End 1 2"
+      "text": "start end 1 2"
     },
     {
       "id": 3,
-      "text": "Start 1 2 End"
+      "text": "start 1 2 end"
     },
     {
       "id": 4,
-      "text": "Start End 1"
+      "text": "start end 1"
     }
   ],
   "correctAnswerId": 1,

@@ -1,0 +1,34 @@
+{
+  "id": 5,
+  "title": "Promise",
+  "difficulty": "medium",
+  "skill": "js",
+  "tags": ["front", "js", "Async js"],
+  "question": "Каким будет вывод этого фрагмента кода?",
+  "images": [
+    "js/js5task_1.png"
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "text": "start middle 1 end success"
+    },
+    {
+      "id": 2,
+      "text": "start 1 middle success end"
+    },
+    {
+      "id": 3,
+      "text": "start middle end 1 success"
+    },
+    {
+      "id": 4,
+      "text": "start 1 middle end success"
+    }
+  ],
+  "correctAnswerId": 1,
+  "explanation": "Блоки синхронного кода всегда выполняются последовательно сверху вниз. Когда мы вызываем new Promise(callback), функция коллбэка будет выполнена сразу же. Этот код преднамеренно добавляет синхронную функцию fn. Сначала выполняется синхронный код, а затем асинхронный. Синхронный код выполняется в том порядке, в котором он был вызван.",
+  "explanationImages": [
+    "js/js5exp_1.png"
+  ]
+}

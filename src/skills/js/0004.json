@@ -1,0 +1,32 @@
+{
+  "id": 4,
+  "title": "Promise",
+  "difficulty": "easy",
+  "skill": "js",
+  "tags": ["front", "js", "Async js"],
+  "question": "Каким будет вывод этого фрагмента кода?",
+  "images": [
+    "js/js4task_1.png"
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "text": "start end"
+    },
+    {
+      "id": 2,
+      "text": "start 1 2 end"
+    },
+    {
+      "id": 3,
+      "text": "start 1 end"
+    },
+    {
+      "id": 4,
+      "text": "start 1 end 2"
+    }
+  ],
+  "correctAnswerId": 3,
+  "explanation": "Блоки синхронного кода всегда выполняются последовательно сверху вниз. Когда мы вызываем new Promise(callback), функция коллбэка будет выполнена сразу же. В этом коде метод resolve никогда не вызывался, поэтому promise1 всегда находится в состоянии ожидания (pending). Так что promise1.then(…) никогда не выполнялся.",
+  "explanationImages": []
+}

@@ -23,7 +23,6 @@
 					class="skillometer__select"
 					:options="[5, 10, 15, 20, 25, 30]"
 					placeholder="Количество задач"
-					multiple
 				/>
 
 				<button type="button" class="skillometer__button" :disabled="!allValuesSettled" @click="startHandler">

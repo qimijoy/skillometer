@@ -1,6 +1,6 @@
 {
   "id": 1,
-  "title": "Конструктор Promise",
+  "title": "Promise",
   "difficulty": "easy",
   "skill": "js",
   "tags": ["front", "js", "Async js"],
@@ -11,19 +11,19 @@
   "answers": [
     {
       "id": 1,
-      "text": "Start 1 End"
+      "text": "start 1 end"
     },
     {
       "id": 2,
-      "text": "Start End 1"
+      "text": "start end 1"
     },
     {
       "id": 3,
-      "text": "1 Start End"
+      "text": "1 start end"
     },
     {
       "id": 4,
-      "text": "Start End"
+      "text": "start end"
     }
   ],
   "correctAnswerId": 1,
