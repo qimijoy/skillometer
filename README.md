@@ -1,6 +1,6 @@
 # skillometer
 
-sample text
+An application for testing your skills =) You can choose skills, topics, difficulty and amount of tasks to solve. 
 
 ## Project Setup
 
