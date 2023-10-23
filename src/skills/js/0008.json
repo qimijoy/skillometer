@@ -1,0 +1,36 @@
+{
+  "id": 8,
+  "title": "Микротаски, макротаски",
+  "difficulty": "hard",
+  "skill": "js",
+  "tags": ["front", "js", "Async js"],
+  "question": "Каким будет вывод этого фрагмента кода?",
+  "images": [
+    "images/js/js8task_1.png"
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "text": "1 timerStart timerEnd 2 4 success"
+    },
+    {
+      "id": 2,
+      "text": "1 2 4 timerStart success timerEnd"
+    },
+    {
+      "id": 3,
+      "text": "4 1 2 timerStart timerEnd success"
+    },
+    {
+      "id": 4,
+      "text": "1 2 4 timerStart timerEnd success"
+    }
+  ],
+  "correctAnswerId": 4,
+  "explanation": "Задача сводится к следующим шагам и выполнению их в цикле: 1. Найти синхронный код. 2. Найти код микрозадачи. 3. Найти код макрозадачи. Поскольку текущий Promise все еще находится в состоянии ожидания (pending), код в данный момент выполняться не будет, поэтому выполняется макрозадача (setTimeout), запускается новый цикл event loop, промис становится fulfilled и выполняется микротаска.",
+  "explanationImages": [
+    "images/js/js8exp_1.png",
+    "images/js/js8exp_2.png",
+    "images/js/js8exp_3.png"
+  ]
+}

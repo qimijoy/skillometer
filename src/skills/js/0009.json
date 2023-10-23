@@ -1,0 +1,36 @@
+{
+  "id": 9,
+  "title": "Микротаски, макротаски",
+  "difficulty": "hard",
+  "skill": "js",
+  "tags": ["front", "js", "Async js"],
+  "question": "Каким будет вывод этого фрагмента кода?",
+  "images": [
+    "images/js/js9task_1.png"
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "text": "timer1 timer2 promise1"
+    },
+    {
+      "id": 2,
+      "text": "timer1 promise1"
+    },
+    {
+      "id": 3,
+      "text": "timer1 promise1 timer2"
+    },
+    {
+      "id": 4,
+      "text": "timer1 timer2"
+    }
+  ],
+  "correctAnswerId": 3,
+  "explanation": "1. Сначала выполняются все микрозадачи. 2. Выполняется одна макрозадача. 3. Повторно выполняются все (вновь добавленные) микрозадачи. 4. Выполняется следующая макрозадача. 5. Цикл повторяется / Цикл завершается. В приведенном выше коде коллбэк-функция Promise.then будет выполняться перед коллбэк-функцией второго setTimeout, потому что это микрозадача, и она была врезана в последовательность задач.",
+  "explanationImages": [
+    "images/js/js9exp_1.png",
+    "images/js/js9exp_2.png",
+    "images/js/js9exp_3.png"
+  ]
+}
