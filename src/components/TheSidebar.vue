@@ -35,17 +35,15 @@ const links = computed(() => [{ name: 'Тест', href: '/auth' }]);
 .sidebar {
 	display: flex;
 	flex-direction: row;
-
 	background-color: @white;
 	margin-right: 20px;
 	transition: 0.2s;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+	box-shadow: 0 0 10px rgb(0 0 0 / 7%);
 
 	&__toggle {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
 		width: 15px;
 		height: 100%;
 		background: @primary-hover;

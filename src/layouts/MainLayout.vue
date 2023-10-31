@@ -30,18 +30,17 @@ const mainStore = useMainStore();
 	&__content {
 		display: flex;
 		flex-direction: row;
-
 		flex-grow: 1;
 	}
 
 	&__view {
 		width: 100%;
-
 		padding: 20px 15px 0;
 
 		@media @medium {
 			padding: 20px 20px 0;
 		}
+
 		@media @large {
 			padding: 20px 25px 0;
 		}

@@ -38,16 +38,14 @@ const links = computed(() => [
 @import '@/assets/styles/_mixins';
 
 .header {
+	width: 100%;
+	height: @header-height;
 	display: flex;
 	align-items: center;
-
-	height: @header-height;
 	min-height: @header-height;
-	width: 100%;
-
 	background-color: @white;
 	padding: 0 20px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+	box-shadow: 0 0 10px rgb(0 0 0 / 7%);
 
 	&__nav {
 		display: flex;

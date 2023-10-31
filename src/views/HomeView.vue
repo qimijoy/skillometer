@@ -50,8 +50,7 @@ const allTags = computed(() => SkillStore.allTags);
 
 	&__stats-badges {
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
+		flex-flow: row wrap;
 	}
 }
 

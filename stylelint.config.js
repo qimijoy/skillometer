@@ -21,5 +21,14 @@ module.exports = {
 			files: ['**/*.less'],
 			extends: ['stylelint-config-standard-less'],
 		},
+
+		{
+			files: ['*.vue', '**/*.vue'],
+			extends: 'stylelint-config-recommended-vue',
+			rules: {
+				'import-notation': 'string',
+				'media-query-no-invalid': null, // только для CSS
+			},
+		},
 	],
 };

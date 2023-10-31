@@ -86,7 +86,7 @@ const selectAnswer = (answerId) => {
 @import '@/assets/styles/_breakpoints';
 
 .task {
-	background-color: #eeeeeeee;
+	background-color: #eeee;
 	border-radius: 5px;
 	padding: 15px;
 	margin-bottom: 20px;
