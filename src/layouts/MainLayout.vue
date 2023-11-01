@@ -21,11 +21,13 @@ const mainStore = useMainStore();
 @import '@/assets/styles/_sizes';
 
 .skillometer {
-	display: flex;
-	flex-direction: column;
 	max-width: 1024px;
-	margin: 0 auto;
 	height: 100%;
+
+	margin: 0 auto;
+	display: flex;
+
+	flex-direction: column;
 
 	&__content {
 		display: flex;
@@ -35,6 +37,7 @@ const mainStore = useMainStore();
 
 	&__view {
 		width: 100%;
+
 		padding: 20px 15px 0;
 
 		@media @medium {
