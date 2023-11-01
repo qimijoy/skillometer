@@ -2,7 +2,7 @@ module.exports = {
 	ignoreFiles: ['**/node_modules/**', '**/dist/**'],
 
 	extends: ['stylelint-config-standard'],
-	plugins: ['stylelint-order', 'stylelint-prettier'],
+	plugins: ['stylelint-prettier', 'stylelint-declaration-block-no-ignored-properties', 'stylelint-order'],
 
 	defaultSeverity: 'error',
 
@@ -23,44 +23,49 @@ module.exports = {
 			extends: 'stylelint-config-recommended-vue',
 			rules: {
 				'import-notation': 'string',
-				'media-query-no-invalid': null, // только для CSS
+				'media-query-no-invalid': null, // the rule is only for CSS
 			},
 		},
 	],
 
 	rules: {
-		'declaration-empty-line-before': null, // для совместимости с 'order/properties-order'
+		// Stylelint Original Rules
+		'declaration-empty-line-before': null, // disabled because of 'order/properties-order'
 
-		// Nesting order
-		// 1. Media
-		// 2. Pseudo-elements
-		// 3. Pseudo-classes
-		// 4. BEM-element & BEM-modifier
-		// 6. Nesting
+		// PLUGIN Prettier
+		'prettier/prettier': true,
+
+		// PLUGIN declaration-block-no-ignored-properties
+		'plugin/declaration-block-no-ignored-properties': true,
+
+		// Plugin Order
 		'order/order': [
+			'custom-properties',
+			'dollar-variables',
+			{ type: 'at-rule', name: 'include', hasBlock: false },
 			'declarations',
-			{
-				type: 'at-rule',
-				name: 'media',
-			},
-			{
-				type: 'rule',
-				selector: '^&::(before|after)',
-			},
-			{
-				type: 'rule',
-				selector: '^&:\\w',
-			},
-			{
-				type: 'rule',
-				selector: '^&_',
-			},
-			{
-				type: 'rule',
-				selector: '^.',
-			},
+			{ type: 'at-rule', name: 'media' },
+			{ type: 'rule', selector: '&::before' },
+			{ type: 'rule', selector: '&::after' },
+			{ type: 'rule', selector: '&:visited' },
+			{ type: 'rule', selector: '&:focus' },
+			{ type: 'rule', selector: '&:hover' },
+			{ type: 'rule', selector: '&:active' },
+			{ type: 'rule', selector: '&:disabled' },
+			{ type: 'rule', selector: '&:first-child' },
+			{ type: 'rule', selector: '&:last-child' },
+			{ type: 'rule', selector: '&:nth-child.+' },
+			{ type: 'rule', selector: '^&_' },
+			{ type: 'rule', selector: '^.' },
+			{ type: 'at-rule', name: 'include', hasBlock: true },
+			'at-rules',
 		],
 		'order/properties-order': [
+			{
+				groupName: 'display',
+				emptyLineBefore: 'always',
+				properties: ['display', 'flex-flow', 'flex-direction', 'flex-wrap'],
+			},
 			{
 				groupName: 'position',
 				emptyLineBefore: 'always',
@@ -93,7 +98,6 @@ module.exports = {
 				properties: ['font-family', 'font-size', 'font-weight', 'font-style', 'src'],
 			},
 		],
-
-		'prettier/prettier': true,
+		'order/properties-alphabetical-order': null,
 	},
 };
