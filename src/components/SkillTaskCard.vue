@@ -86,10 +86,10 @@ const selectAnswer = (answerId) => {
 @import '@/assets/styles/_breakpoints';
 
 .task {
+	margin-bottom: 20px;
+	padding: 15px;
 	background-color: #eeee;
 	border-radius: 5px;
-	padding: 15px;
-	margin-bottom: 20px;
 
 	&__info {
 		margin-bottom: 10px;
@@ -112,6 +112,7 @@ const selectAnswer = (answerId) => {
 
 	&__difficulty {
 		border-radius: 5px;
+
 		padding: 3px 5px;
 
 		&_green {
@@ -133,6 +134,7 @@ const selectAnswer = (answerId) => {
 		align-items: center;
 		justify-content: center;
 		gap: 20px;
+
 		margin-bottom: 20px;
 	}
 

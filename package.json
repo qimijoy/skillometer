@@ -7,7 +7,7 @@
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist",
     "lint": "eslint ./",
-    "stylelint": "stylelint \"**/*.{css,less,vue}\" --formatter verbose"
+    "stylelint": "stylelint '**/*.{css,less,vue}' --formatter verbose"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
@@ -36,6 +36,7 @@
     "stylelint-config-standard": "^34.0.0",
     "stylelint-config-standard-less": "^2.0.0",
     "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^4.0.2",
     "vite": "^4.5.0",
     "vue-eslint-parser": "^9.3.2"
   },

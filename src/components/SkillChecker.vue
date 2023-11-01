@@ -101,8 +101,8 @@ const checkAnswer = () => {
 	flex-direction: column;
 
 	&__button {
-		padding: 10px 0;
 		margin-bottom: 20px;
+		padding: 10px 0;
 	}
 
 	&__result {
@@ -121,6 +121,7 @@ const checkAnswer = () => {
 
 	&__explanation-image {
 		max-width: 40%;
+
 		margin-bottom: 20px;
 	}
 }

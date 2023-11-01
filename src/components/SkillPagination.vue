@@ -96,6 +96,7 @@ watch(
 <style scoped lang="less">
 .pagination {
 	display: flex;
+
 	margin: 0;
 	padding: 0;
 

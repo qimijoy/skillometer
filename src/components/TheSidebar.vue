@@ -36,6 +36,7 @@ const links = computed(() => [{ name: 'Тест', href: '/auth' }]);
 	display: flex;
 	flex-direction: row;
 	background-color: @white;
+
 	margin-right: 20px;
 	transition: 0.2s;
 	box-shadow: 0 0 10px rgb(0 0 0 / 7%);
@@ -44,6 +45,7 @@ const links = computed(() => [{ name: 'Тест', href: '/auth' }]);
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
 		width: 15px;
 		height: 100%;
 		background: @primary-hover;
@@ -52,10 +54,11 @@ const links = computed(() => [{ name: 'Тест', href: '/auth' }]);
 	}
 
 	&__links {
+		width: 100%;
+
 		padding: 20px;
 		display: flex;
 		flex-direction: column;
-		width: 100%;
 	}
 }
 </style>
