@@ -2,7 +2,12 @@ module.exports = {
 	ignoreFiles: ['**/node_modules/**', '**/dist/**'],
 
 	extends: ['stylelint-config-standard'],
-	plugins: ['stylelint-prettier', 'stylelint-declaration-block-no-ignored-properties', 'stylelint-order'],
+	plugins: [
+		'stylelint-prettier',
+		'stylelint-declaration-block-no-ignored-properties',
+		'stylelint-order',
+		'stylelint-no-unsupported-browser-features',
+	],
 
 	defaultSeverity: 'error',
 
@@ -30,7 +35,12 @@ module.exports = {
 
 	rules: {
 		// Stylelint Original Rules
-		'declaration-empty-line-before': null, // disabled because of 'order/properties-order'
+		'declaration-empty-line-before': [
+			'always',
+			{
+				ignore: ['after-comment', 'after-declaration', 'first-nested', 'inside-single-line-block'],
+			},
+		], // tweaked for 'order/properties-order'
 
 		// PLUGIN Prettier
 		'prettier/prettier': true,
@@ -38,11 +48,13 @@ module.exports = {
 		// PLUGIN declaration-block-no-ignored-properties
 		'plugin/declaration-block-no-ignored-properties': true,
 
-		// Plugin Order
+		// PLUGIN Order
 		'order/order': [
 			'custom-properties',
 			'dollar-variables',
+			'at-variables',
 			{ type: 'at-rule', name: 'include', hasBlock: false },
+			'less-mixins',
 			'declarations',
 			{ type: 'at-rule', name: 'media' },
 			{ type: 'rule', selector: '&::before' },
@@ -71,15 +83,17 @@ module.exports = {
 				emptyLineBefore: 'always',
 				properties: ['position', 'z-index', 'top', 'right', 'bottom', 'left'],
 			},
-			{
-				groupName: 'dimensions',
-				emptyLineBefore: 'always',
-				properties: ['width', 'min-width', 'max-width', 'height', 'min-height', 'max-height'],
-			},
+
 			{
 				groupName: 'box-model',
 				emptyLineBefore: 'always',
 				properties: [
+					'width',
+					'min-width',
+					'max-width',
+					'height',
+					'min-height',
+					'max-height',
 					'margin',
 					'margin-top',
 					'margin-right',
@@ -93,11 +107,40 @@ module.exports = {
 				],
 			},
 			{
-				groupName: 'font',
+				groupName: 'Typography',
 				emptyLineBefore: 'always',
-				properties: ['font-family', 'font-size', 'font-weight', 'font-style', 'src'],
+				properties: [
+					'font',
+					'font-family',
+					'font-size',
+					'line-height',
+					'font-weight',
+					'font-style',
+					'src',
+					'text-align',
+					'color',
+					'outline',
+				],
+			},
+			{
+				groupName: 'Visual',
+				emptyLineBefore: 'always',
+				properties: ['background', 'background-color', 'border', 'border-radius', 'opacity'],
+			},
+			{
+				groupName: 'Animation',
+				emptyLineBefore: 'always',
+				properties: ['transition'],
 			},
 		],
 		'order/properties-alphabetical-order': null,
+
+		// PLUGIN no-unsupported-browser-features
+		'plugin/no-unsupported-browser-features': [
+			true,
+			{
+				ignorePartialSupport: true,
+			},
+		],
 	},
 };
