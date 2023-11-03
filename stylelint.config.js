@@ -1,7 +1,7 @@
 module.exports = {
 	ignoreFiles: ['**/node_modules/**', '**/dist/**'],
 
-	extends: ['stylelint-config-standard'],
+	extends: ['stylelint-config-standard', 'stylelint-config-standard-less'],
 	plugins: [
 		'stylelint-prettier',
 		'stylelint-declaration-block-no-ignored-properties',
@@ -19,13 +19,18 @@ module.exports = {
 
 	overrides: [
 		{
-			files: ['**/*.less'],
-			extends: ['stylelint-config-standard-less'],
+			files: ['**/*.html'],
+			extends: ['stylelint-config-html'],
+			customSyntax: 'postcss-html',
 		},
-
 		{
-			files: ['*.vue', '**/*.vue'],
-			extends: 'stylelint-config-recommended-vue',
+			files: ['**/*.less'],
+			extends: ['stylelint-config-recommended-less'],
+			// customSyntax: 'postcss-less',
+		},
+		{
+			files: ['**/*.vue'],
+			extends: ['stylelint-config-recommended-vue'],
 			rules: {
 				'import-notation': 'string',
 				'media-query-no-invalid': null, // the rule is only for CSS
