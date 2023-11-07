@@ -88,12 +88,14 @@ const selectAnswer = (answerId) => {
 .task {
 	margin-bottom: 20px;
 	padding: 15px;
+
 	background-color: #eeee;
 	border-radius: 5px;
 
 	&__info {
-		margin-bottom: 10px;
 		display: flex;
+
+		margin-bottom: 10px;
 		justify-content: space-between;
 	}
 
@@ -111,9 +113,9 @@ const selectAnswer = (answerId) => {
 	}
 
 	&__difficulty {
-		border-radius: 5px;
-
 		padding: 3px 5px;
+
+		border-radius: 5px;
 
 		&_green {
 			background-color: green;

@@ -26,7 +26,7 @@ module.exports = {
 		{
 			files: ['**/*.less'],
 			extends: ['stylelint-config-recommended-less'],
-			// customSyntax: 'postcss-less',
+			customSyntax: 'postcss-less',
 		},
 		{
 			files: ['**/*.vue'],
@@ -145,6 +145,8 @@ module.exports = {
 			true,
 			{
 				ignorePartialSupport: true,
+				ignore: ['css-nesting', 'css-rrggbbaa'], // disabled for less-files
+				severity: 'warning',
 			},
 		],
 	},

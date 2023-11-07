@@ -107,6 +107,7 @@ watch(
 	&__button {
 		padding: 8px 14px;
 		cursor: pointer;
+
 		border: none;
 		border-radius: 2px;
 

@@ -16,9 +16,11 @@ const props = defineProps({
 
 .badge {
 	padding: 6px 12px;
+
+	line-height: 1em;
+	color: @white;
+
 	background-color: @primary;
 	border-radius: 10px;
-	color: @white;
-	line-height: 1em;
 }
 </style>
