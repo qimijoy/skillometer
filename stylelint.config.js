@@ -1,7 +1,7 @@
 module.exports = {
 	ignoreFiles: ['**/node_modules/**', '**/dist/**'],
 
-	extends: ['stylelint-config-standard', 'stylelint-config-standard-less'],
+	extends: ['stylelint-config-standard'],
 	plugins: [
 		'stylelint-prettier',
 		'stylelint-declaration-block-no-ignored-properties',
@@ -25,12 +25,12 @@ module.exports = {
 		},
 		{
 			files: ['**/*.less'],
-			extends: ['stylelint-config-recommended-less'],
+			extends: ['stylelint-config-standard-less'],
 			customSyntax: 'postcss-less',
 		},
 		{
 			files: ['**/*.vue'],
-			extends: ['stylelint-config-recommended-vue'],
+			extends: ['stylelint-config-standard-vue'],
 			rules: {
 				'import-notation': 'string',
 				'media-query-no-invalid': null, // the rule is only for CSS
@@ -121,21 +121,24 @@ module.exports = {
 					'line-height',
 					'font-weight',
 					'font-style',
-					'src',
 					'text-align',
-					'color',
-					'outline',
+					'src',
 				],
 			},
 			{
 				groupName: 'Visual',
 				emptyLineBefore: 'always',
-				properties: ['background', 'background-color', 'border', 'border-radius', 'opacity'],
+				properties: ['color', 'background', 'background-color', 'border', 'border-radius', 'opacity', 'outline'],
+			},
+			{
+				groupName: 'Misc',
+				emptyLineBefore: 'always',
+				properties: ['cursor', 'overflow', 'box-sizing'],
 			},
 			{
 				groupName: 'Animation',
 				emptyLineBefore: 'always',
-				properties: ['transition'],
+				properties: ['transition', 'animation'],
 			},
 		],
 		'order/properties-alphabetical-order': null,

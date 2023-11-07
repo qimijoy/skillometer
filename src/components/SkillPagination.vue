@@ -106,10 +106,11 @@ watch(
 
 	&__button {
 		padding: 8px 14px;
-		cursor: pointer;
 
 		border: none;
 		border-radius: 2px;
+
+		cursor: pointer;
 
 		&_active {
 			background-color: #ff647c;

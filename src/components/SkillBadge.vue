@@ -18,6 +18,7 @@ const props = defineProps({
 	padding: 6px 12px;
 
 	line-height: 1em;
+
 	color: @white;
 
 	background-color: @primary;

@@ -54,6 +54,7 @@ const links = computed(() => [{ name: 'Тест', href: '/auth' }]);
 		background: @primary-hover;
 		align-items: center;
 		justify-content: center;
+
 		cursor: pointer;
 	}
 
