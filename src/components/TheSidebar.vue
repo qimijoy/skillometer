@@ -40,8 +40,8 @@ const links = computed(() => [{ name: 'Тест', href: '/auth' }]);
 
 	background-color: @white;
 
-	transition: 0.2s;
-	box-shadow: 0 0 10px rgb(0 0 0 / 7%);
+	transition: 200ms;
+	box-shadow: 0 0 10px rgb(0 0 0 / 0.07);
 
 	&__toggle {
 		display: flex;

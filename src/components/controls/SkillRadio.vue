@@ -68,14 +68,14 @@ const handleClick = (event) => {
 
 		cursor: pointer;
 
-		&::before {
+		&:before {
 			display: inline-block;
 
 			width: 24px;
 			height: 24px;
 			margin-right: 10px;
 
-			border: 1px solid grey;
+			border: 1px solid #808080;
 			border-radius: 50%;
 			content: '';
 			flex-shrink: 0;
@@ -87,44 +87,44 @@ const handleClick = (event) => {
 	}
 
 	&__input:checked + &__span {
-		&::before {
-			border-color: blue;
+		&:before {
+			border-color: #0000ff;
 
-			background-color: blue;
+			background-color: #0000ff;
 			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 		}
 	}
 
 	&__input:focus + &__span {
-		&::before {
-			box-shadow: 0 7px 20px rgb(0 0 0 / 7%);
+		&:before {
+			box-shadow: 0 7px 20px rgb(0 0 0 / 0.07);
 		}
 	}
 
 	&__input:disabled + &__span {
-		&::before {
-			background-color: grey;
-			border: 1px solid grey;
+		&:before {
+			background-color: #808080;
+			border: 1px solid #808080;
 			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 		}
 	}
 
 	&__input:not(:disabled, :checked) + &__span {
-		&:hover::before {
-			border-color: blue;
+		&:hover:before {
+			border-color: #0000ff;
 		}
 	}
 
 	&__input:not(:disabled):active + &__span {
-		&::before {
-			background-color: blue;
-			border: 1px solid grey;
+		&:before {
+			background-color: #0000ff;
+			border: 1px solid #808080;
 		}
 	}
 
 	&__input:focus:not(:checked) + &__span {
-		&::before {
-			border-color: blue;
+		&:before {
+			border-color: #0000ff;
 		}
 	}
 }

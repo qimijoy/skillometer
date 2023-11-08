@@ -89,7 +89,7 @@ const selectAnswer = (answerId) => {
 	margin-bottom: 20px;
 	padding: 15px;
 
-	background-color: #eeee;
+	background-color: #eeeeeeee;
 	border-radius: 5px;
 
 	&__info {
@@ -118,15 +118,15 @@ const selectAnswer = (answerId) => {
 		border-radius: 5px;
 
 		&_green {
-			background-color: green;
+			background-color: #00ff00;
 		}
 
 		&_yellow {
-			background-color: yellow;
+			background-color: #ffff00;
 		}
 
 		&_red {
-			background-color: red;
+			background-color: #ff0000;
 		}
 	}
 

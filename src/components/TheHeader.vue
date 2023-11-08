@@ -49,7 +49,7 @@ const links = computed(() => [
 
 	background-color: @white;
 	align-items: center;
-	box-shadow: 0 0 10px rgb(0 0 0 / 7%);
+	box-shadow: 0 0 10px rgb(0 0 0 / 0.07);
 
 	&__nav {
 		display: flex;
