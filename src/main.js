@@ -6,6 +6,7 @@ import router from './router';
 
 // PINIA
 import { createPinia } from 'pinia';
+const pinia = createPinia();
 
 // STYLES
 import './assets/styles/index.less';
@@ -13,6 +14,6 @@ import './assets/styles/index.less';
 const app = createApp(App);
 
 app.use(router);
-app.use(createPinia());
+app.use(pinia);
 
 app.mount('#skillometer');
