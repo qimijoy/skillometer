@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "npm run build && vite preview",
     "deploy": "npm run build && gh-pages -d dist",
     "lint": "eslint ./",
     "stylelint": "stylelint '**/*.{css,less,vue}' --formatter verbose"
